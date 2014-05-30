@@ -19,9 +19,19 @@ then
   .  ~/.bash_aliases
 fi
 
+# Set smiley-face PS1
 _smiley="\`if [ \$? = 0 ]; then echo \[\e[33m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_O\[\e[0m\]; fi\`"
 _PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \n\$\[\033[00m\] '
 PS1="${_smiley}${_PS1}"
 
 # Requires `sudo apt-get install ncurses-term`
 export TERM=xterm-256color
+
+# Enable bash completion in interactive shells
+if ! shopt -oq posix; then
+ if [ -f /usr/share/bash-completion/bash_completion ]; then
+   . /usr/share/bash-completion/bash_completion
+ elif [ -f /etc/bash_completion ]; then
+   . /etc/bash_completion
+ fi
+fi
