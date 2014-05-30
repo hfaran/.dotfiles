@@ -4,3 +4,4 @@ alias gd="git diff --color"
 alias rm='echo "This is not the command you are looking for. Use trash-put."; false'
 alias tp='trash-put'
 alias gs='git status'
+alias ls='ls --color=auto'
