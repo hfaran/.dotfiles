@@ -28,4 +28,4 @@ alias dist-update="sudo apt-fast update; sudo apt-fast dist-upgrade -y"
 alias rm='echo "This is not the command you are looking for. Use trash-put."; false'
 alias tp='trash-put'
 alias ls='ls --color=auto'
-alias cat='pygmentize'
+alias cat='pygmentize -g'
