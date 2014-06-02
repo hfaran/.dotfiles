@@ -32,8 +32,9 @@ alias rm='echo "This is not the command you are looking for. Use trash-put."; fa
 alias tp='trash-put'
 
 alias cat='pygmentize -g'
-alias ls='ls -A --color=auto'
-alias ll='ls -lhF'
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='la -lhF'
 
 alias h='history'
 
