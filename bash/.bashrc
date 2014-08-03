@@ -41,6 +41,9 @@ PS1="${_smiley}${_PS1}"
 
 # Requires `sudo apt-get install ncurses-term`
 export TERM=xterm-256color
+# Ruby version manager
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
