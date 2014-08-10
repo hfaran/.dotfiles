@@ -5,7 +5,7 @@ import sys
 import click
 
 
-def mklink(target, link_name, symbolic=True, dry_run=True):
+def mklink(target, link_name, symbolic=False, dry_run=True):
     command =  u"ln {symbolic} {target} {link_name}".format(
         symbolic="-s" if symbolic else "",
         target=target,
