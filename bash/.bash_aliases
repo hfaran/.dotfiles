@@ -34,13 +34,14 @@ alias gd="git diff --color"
 # Misc program aliases
 alias python27="python2.7"
 
-
 alias cat='pygmentize -g'
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='la -lhF'
 
 alias h='history'
+alias xclipb='xclip -selection clipboard'
+alias howdoi='howdoi -c'
 
 
 # Navigational aliases
