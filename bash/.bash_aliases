@@ -35,7 +35,9 @@ alias gd="git diff --color"
 alias python27="python2.7"
 
 alias cat='pygmentize -g'
-alias ls='ls --color=auto'
+if [[ "$UNAMESTR" == "Linux" ]]; then
+    alias ls='ls --color=auto'
+fi
 alias la='ls -A'
 alias ll='la -lhF'
 
