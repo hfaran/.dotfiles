@@ -8,3 +8,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 source ~/.osx_bash_aliases
+
+# Important so that we use stuff from `brew` rather than system stuff
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
