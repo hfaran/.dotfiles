@@ -37,6 +37,12 @@ alias python27="python2.7"
 alias catp='pygmentize -g'
 if [[ "$UNAMESTR" == "Linux" ]]; then
     alias ls='ls --color=auto'
+elif [[ "$UNAMESTR" == "Darwin" ]]; then
+    if [[ -z $(brew list | grep coreutils) ]]; then
+        echo "Please run `brew install coreutils` to install a good ls"
+    else
+        alias ls='ls --color=auto'
+    fi
 fi
 alias la='ls -A'
 alias ll='la -lhF'
