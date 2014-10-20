@@ -29,6 +29,9 @@ UNAMESTR=$(uname)
 # git aliases
 alias gs='git status'
 alias gd="git diff --color"
+# https://www.kernel.org/pub/software/scm/git/docs/git-clean.html
+alias clean_this_git_up='sudo git clean -ndfx -e .idea'
+alias clean_this_git_up_for_real='sudo git clean -dfx -e .idea'
 
 
 # Misc program aliases
