@@ -44,6 +44,8 @@ export TERM=xterm-256color
 # Ruby version manager
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.rvm/scripts/rvm
+# For pipsi
+export PATH=~/.local/bin:$PATH
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
