@@ -47,6 +47,9 @@ source ~/.rvm/scripts/rvm
 # For pipsi
 export PATH=~/.local/bin:$PATH
 
+# Use slap as EDITOR (https://github.com/slap-editor/slap)
+export EDITOR=slap
+
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
