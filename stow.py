@@ -20,8 +20,10 @@ def mklink(target, link_name, symbolic=False, dry_run=True):
 @click.command()
 @click.option("--dry-run", "-D", default=False, is_flag=True,
               help="Print ln commands rather than executing them")
+@click.option("--symbolic", "-s", default=False, is_flag=True,
+              help="Create symbolic rather than hard links")
 @click.argument('package_name')
-def main(dry_run, package_name):
+def main(dry_run, symbolic, package_name):
     """
     A "replacement" for GNU Stow for use on any platforms (i.e., Windows)
     where GNU Stow is not available
@@ -51,7 +53,8 @@ def main(dry_run, package_name):
         link_name = os.path.join(link_path, node)
         if not dry_run:
             print("Creating symbolic link: {} -> {}".format(target, link_name))
-        mklink(target=target, link_name=link_name, dry_run=dry_run)
+        mklink(target=target, link_name=link_name, dry_run=dry_run,
+               symbolic=symbolic)
 
 
 if __name__ == '__main__':
