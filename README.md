@@ -1,13 +1,17 @@
-.dotfiles
-=========
+# `.dotfiles`
+
+## Usage
 
 * Clone this repository into `~`.
 * Install [GNU Stow](http://www.gnu.org/software/stow/)
-* Use `stow` to install the dotfiles by package, like so:
+    * Or if on Windows, use the included `stow.py`
+* Use `stow` (or `stow.py` as necessary) to install the dotfiles by package, like so:
 
 ```
-$ stow bash
-$ stow git
+bash$ stow bash
+bash$ stow git
+...
+PS> python stow.py windows
 ```
 
 ## References
