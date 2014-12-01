@@ -10,6 +10,7 @@
 $env:PSModulePath = $env:PSModulePath + ";E:\Documents\WindowsPowerShell\modules"
 
 Import-Module PSReadLine
+Add-Type -AssemblyName System.Windows.Forms
 
 
 ############################
@@ -82,4 +83,37 @@ Function edit_path {
     set_path (Get-Content $temp_file_path)
     # Remove temp file
     Remove-Item $temp_file_path
+}
+
+Function set_power_state ($t, $PowerState) {
+    <#
+    .DESCRIPTION
+    Starts a job that sleeps $t seconds before setting machine power state
+    Reference:
+    * http://stackoverflow.com/questions/20713782/suspend-or-hibernate-from-powershell
+    * http://stackoverflow.com/questions/12766174/how-to-execute-a-powershell-function-several-times-in-parallel
+
+    .PARAMETER t
+    Number of seconds to sleep before shutdown
+    .PARAMETER PowerState
+    The PowerState from [System.Windows.Forms.PowerState] to set
+    #>
+    $sleep_cmd = {
+        param($t, $PowerState)
+        # ScriptBlock is in a different context so we have to re-import Forms
+        Add-Type -AssemblyName System.Windows.Forms
+        Start-Sleep $t  # Wait $t seconds before suspending
+        [System.Windows.Forms.Application]::SetSuspendState($PowerState, $false, $false)
+    }
+    Start-Job -ScriptBlock $sleep_cmd -ArgumentList $t, $PowerState
+}
+
+Function suspend ($t) {
+    $PowerState = [System.Windows.Forms.PowerState]::Suspend;
+    set_power_state $t $PowerState
+}
+
+Function hibernate ($t) {
+    $PowerState = [System.Windows.Forms.PowerState]::Hibernate;
+    set_power_state $t $PowerState
 }
