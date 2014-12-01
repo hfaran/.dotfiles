@@ -42,6 +42,7 @@ Function clean_this_git_up_for_real {git clean -dfx -e .idea}
 
 Function catp {pygmentize -g $args}
 New-Item alias:subl -value "C:\Program Files\Sublime Text 3\sublime_text.exe"
+Function service ($name, $action) {sudo net $action $name}
 
 # Navigational aliases
 Function up {cd ..}
