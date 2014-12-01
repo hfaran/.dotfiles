@@ -50,3 +50,35 @@ Function ... {cd ../..}
 Function .... {cd ../../..}
 Function ..... {cd ../../../..}
 Function ...... {cd ../../../../..}
+
+
+#####################
+# Utility Functions #
+#####################
+
+Function read_path {
+    return [Environment]::GetEnvironmentVariable("PATH", "User")
+}
+
+Function set_path ($path) {
+    [Environment]::SetEnvironmentVariable("PATH", $path, "User")
+}
+
+Function append_path ($ext) {
+    $path = read_path
+    set_path ($path + $ext)
+}
+
+Function edit_path {
+    # Save existing PATH to temp file and open it with sublime for editing
+    $temp_file_path = "C:\temp\ " + [guid]::NewGuid().guid
+    read_path | Out-File $temp_file_path
+    subl $temp_file_path
+    # Wait for user to finish editing
+    Write-Host "When finished editing, press any key to continue..."
+    $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    # Read new PATH from temp file and set
+    set_path (Get-Content $temp_file_path)
+    # Remove temp file
+    Remove-Item $temp_file_path
+}
