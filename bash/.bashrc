@@ -59,3 +59,5 @@ export PATH=~/.local/bin:$PATH
 export EDITOR=slap
 # For homebrew/science/root
 . $(brew --prefix root)/libexec/thisroot.sh
+# GOPATH
+eval export GOPATH="~/go"
