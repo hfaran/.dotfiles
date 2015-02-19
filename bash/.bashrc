@@ -57,3 +57,5 @@ source ~/.rvm/scripts/rvm
 export PATH=~/.local/bin:$PATH
 # Use slap as EDITOR (https://github.com/slap-editor/slap)
 export EDITOR=slap
+# For homebrew/science/root
+. $(brew --prefix root)/libexec/thisroot.sh
