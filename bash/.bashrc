@@ -61,3 +61,7 @@ export EDITOR=slap
 . $(brew --prefix root)/libexec/thisroot.sh
 # GOPATH
 eval export GOPATH="~/go"
+# brew install z
+. `brew --prefix`/etc/profile.d/z.sh
+# brew install autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
