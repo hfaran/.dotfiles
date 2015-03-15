@@ -14,3 +14,11 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Requires `brew install coreutils`
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# For homebrew/science/root
+. $(brew --prefix root)/libexec/thisroot.sh
+# GOPATH
+eval export GOPATH="~/go"
+# brew install z
+. `brew --prefix`/etc/profile.d/z.sh
+# brew install autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
