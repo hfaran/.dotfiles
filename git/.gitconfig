@@ -8,3 +8,5 @@ lg = !"git lg1"
     name = hfaran
 [color]
     ui = auto
+[help]
+    autocorrect = 30
