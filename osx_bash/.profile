@@ -22,3 +22,21 @@ eval export GOPATH="~/go"
 . `brew --prefix`/etc/profile.d/z.sh
 # brew install autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+
+fixwifi () {
+    set -x
+    # This fixes (i.e., restarts) the WiFi
+    ping -c 1 -t 2 8.8.8.8  # ping google
+    result=`echo $?`
+    if [[ "$result" == "0" ]]
+    then
+        echo "WiFi is A-Ok."
+    else
+        echo "WiFi is broke; fixing."
+        networksetup -setairportpower en0 off
+        sleep 3
+        networksetup -setairportpower en0 on
+    fi
+    set +x
+}
