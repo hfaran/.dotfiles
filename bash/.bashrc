@@ -51,8 +51,11 @@ PS1="${_smiley}${_PS1}"
 # Requires `sudo apt-get install ncurses-term`
 export TERM=xterm-256color
 # Ruby version manager
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
+if [[ "`test -f ~/.rvm/`" -eq 0 ]]
+then
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+    source ~/.rvm/scripts/rvm
+fi
 # For pipsi
 export PATH=~/.local/bin:$PATH
 # Use slap as EDITOR (https://github.com/slap-editor/slap)
