@@ -60,3 +60,6 @@ fi
 export PATH=~/.local/bin:$PATH
 # Use slap as EDITOR (https://github.com/slap-editor/slap)
 export EDITOR=slap
+# pip install virtualenvwrapper
+export WORKON_HOME=~/.virtualenv_Envs
+source /usr/local/bin/virtualenvwrapper.sh
