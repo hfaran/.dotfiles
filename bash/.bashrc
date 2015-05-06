@@ -25,6 +25,11 @@ HISTFILESIZE=20000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Append history of current shell to historyfile on every command
+# THIS DOES NOT RELOAD THE HISTORY OF THIS SHELL; only provides
+#   it to new shells that will be opened
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
