@@ -6,3 +6,8 @@
 ; keep tabs on that so can remove this section
 [logger]
 level = "error"
+
+[editor.buffer]
+tabSize = 4
+visibleWhiteSpace = true
+visibleLineEndings = false
