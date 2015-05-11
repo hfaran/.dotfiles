@@ -68,3 +68,12 @@ export EDITOR=slap
 # pip install virtualenvwrapper
 export WORKON_HOME=~/.virtualenv_Envs
 source /usr/local/bin/virtualenvwrapper.sh
+# tmuxinator
+# Grab bash completion file if it doesn't exist
+_TMUX_COMPLETION_FILE="$HOME/.bin/tmuxinator.bash"
+if [ ! -f $_TMUX_COMPLETION_FILE ]
+then
+    mkdir -p ~/.bin/
+    wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash -P ${HOME}/.bin/
+fi
+source $_TMUX_COMPLETION_FILE
