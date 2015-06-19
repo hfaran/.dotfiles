@@ -77,3 +77,8 @@ then
     wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash -P ${HOME}/.bin/
 fi
 source $_TMUX_COMPLETION_FILE
+
+if [ -f ~/.dwbashrc ]
+then
+    source ~/.dwbashrc
+fi
