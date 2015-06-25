@@ -82,3 +82,10 @@ if [ -f ~/.dwbashrc ]
 then
     source ~/.dwbashrc
 fi
+
+# tmux-plugins
+if [ ! -d ~/.tmux/plugins/tpm ]
+then
+    echo "Installing tmux-plugins..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
