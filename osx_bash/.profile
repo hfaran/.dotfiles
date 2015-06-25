@@ -20,9 +20,6 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 eval export GOPATH="~/go"
 # brew install z
 . `brew --prefix`/etc/profile.d/z.sh
-# brew install autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 
 fixwifi () {
     set -x
@@ -40,3 +37,6 @@ fixwifi () {
     fi
     set +x
 }
+
+# https://gorails.com/setup/osx/10.10-yosemite
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
