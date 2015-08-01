@@ -92,3 +92,4 @@ fi
 
 # pip/brew install thefuck
 eval "$(thefuck-alias pls)"
+eval "$(thefuck-alias fuck)"
