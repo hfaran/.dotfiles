@@ -89,3 +89,6 @@ then
     echo "Installing tmux-plugins..."
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+# pip/brew install thefuck
+eval "$(thefuck-alias pls)"
