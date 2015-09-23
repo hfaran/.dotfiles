@@ -40,3 +40,6 @@ fixwifi () {
 
 # https://gorails.com/setup/osx/10.10-yosemite
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Java things
+export JAVA_HOME=$(/usr/libexec/java_home)
