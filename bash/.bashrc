@@ -93,3 +93,12 @@ fi
 # pip/brew install thefuck
 eval "$(thefuck --alias pls)"
 eval "$(thefuck --alias fuck)"
+
+# linuxbrew
+_LINUXBREW_PATH="$HOME/.linuxbrew/bin"
+if [ -d $_LINUXBREW_PATH ]
+then
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+fi
