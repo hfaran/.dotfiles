@@ -67,7 +67,11 @@ export PATH=~/.local/bin:$PATH
 export EDITOR=slap
 # pip install virtualenvwrapper
 export WORKON_HOME=~/.virtualenv_Envs
-source /usr/local/bin/virtualenvwrapper.sh
+_VIRTUALENVWRAPPER_SH="/usr/local/bin/virtualenvwrapper.sh"
+if [ -f $_VIRTUALENVWRAPPER_SH ]
+then
+    source $_VIRTUALENVWRAPPER_SH
+fi
 # tmuxinator
 # Grab bash completion file if it doesn't exist
 _TMUX_COMPLETION_FILE="$HOME/.bin/tmuxinator.bash"
@@ -101,4 +105,9 @@ then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+    if [ -f "$_LINUXBREW_PATH/virtualenvwrapper.sh" ]
+    then
+        source "$_LINUXBREW_PATH/virtualenvwrapper.sh"
+    fi
 fi
