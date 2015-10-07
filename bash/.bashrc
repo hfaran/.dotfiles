@@ -95,8 +95,11 @@ then
 fi
 
 # pip/brew install thefuck
-eval "$(thefuck --alias pls)"
-eval "$(thefuck --alias fuck)"
+if [ $(which thefuck) ]
+then
+   eval "$(thefuck --alias pls)"
+   eval "$(thefuck --alias fuck)"
+fi
 
 # linuxbrew
 _LINUXBREW_PATH="$HOME/.linuxbrew/bin"
