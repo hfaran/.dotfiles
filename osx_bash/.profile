@@ -38,6 +38,14 @@ fixwifi () {
     set +x
 }
 
+cleanbrew () {
+    set -x
+    brew cleanup --force -s
+    rm -rf $(brew --cache)
+    brew prune
+    set +x
+}
+
 # https://gorails.com/setup/osx/10.10-yosemite
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
