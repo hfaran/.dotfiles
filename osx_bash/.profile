@@ -43,6 +43,7 @@ cleanbrew () {
     brew cleanup --force -s
     rm -rf $(brew --cache)
     brew prune
+    brew cask cleanup
     set +x
 }
 
