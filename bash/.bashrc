@@ -82,11 +82,6 @@ then
 fi
 source $_TMUX_COMPLETION_FILE
 
-if [ -f ~/.dwbashrc ]
-then
-    source ~/.dwbashrc
-fi
-
 # tmux-plugins
 if [ ! -d ~/.tmux/plugins/tpm ]
 then
