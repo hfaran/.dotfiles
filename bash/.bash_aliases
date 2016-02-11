@@ -53,6 +53,7 @@ alias ll='la -lhF'
 alias h='history'
 alias xclipb='xclip -selection clipboard'
 alias howdoi='howdoi -c'
+alias htop='glances'  # Because I always forget
 
 
 # Navigational aliases
