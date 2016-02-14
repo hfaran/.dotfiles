@@ -20,3 +20,5 @@
     autocorrect = 30
 [core]
 	excludesfile = /Users/hfaran/.gitignore_global
+[push]
+	default = simple
