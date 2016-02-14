@@ -18,3 +18,5 @@
     ui = auto
 [help]
     autocorrect = 30
+[core]
+	excludesfile = /Users/hfaran/.gitignore_global
