@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # We source .bashrc first so we can override any OS X-specific stuff later
 source ~/.bashrc
 
@@ -45,6 +47,11 @@ cleanbrew () {
     brew prune
     brew cask cleanup
     set +x
+}
+
+function full_acl_access {
+    # https://www.thomaskeller.biz/blog/2011/06/04/acls-on-mac-os-x/
+    sudo /bin/chmod +a "$1 allow read,write,delete,add_file,add_subdirectory,file_inherit,directory_inherit" $2
 }
 
 # https://gorails.com/setup/osx/10.10-yosemite
