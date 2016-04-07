@@ -117,3 +117,7 @@ Function hibernate ($t) {
     $PowerState = [System.Windows.Forms.PowerState]::Hibernate;
     set_power_state $t $PowerState
 }
+
+Function open ($f) {
+    Invoke-Item $f
+}
