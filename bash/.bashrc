@@ -63,8 +63,9 @@ then
 fi
 # For pipsi
 export PATH=~/.local/bin:$PATH
-# Use slap as EDITOR (https://github.com/slap-editor/slap)
-export EDITOR=slap
+
+export EDITOR=vim
+
 # pip install virtualenvwrapper
 export WORKON_HOME=~/.virtualenv_Envs
 _VIRTUALENVWRAPPER_SH="/usr/local/bin/virtualenvwrapper.sh"
