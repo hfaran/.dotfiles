@@ -121,3 +121,12 @@ Function hibernate ($t) {
 Function open ($f) {
     Invoke-Item $f
 }
+
+Function e {
+    exit
+}
+
+Function IAmAdmin () {
+    # http://superuser.com/a/749259
+    return [bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")
+}
