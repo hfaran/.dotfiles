@@ -62,3 +62,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Java things
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
