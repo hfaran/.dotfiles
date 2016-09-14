@@ -73,7 +73,7 @@ Function append_path ($ext) {
 
 Function edit_path {
     # Save existing PATH to temp file and open it with sublime for editing
-    $temp_file_path = "C:\temp\ " + [guid]::NewGuid().guid
+    $temp_file_path = "C:\temp\" + [guid]::NewGuid().guid
     read_path | Out-File $temp_file_path
     subl $temp_file_path
     # Wait for user to finish editing
