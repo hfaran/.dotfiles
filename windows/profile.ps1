@@ -10,6 +10,7 @@
 $env:PSModulePath = $env:PSModulePath + ";E:\Documents\WindowsPowerShell\modules"
 
 Import-Module PSReadLine
+Import-Module z
 Add-Type -AssemblyName System.Windows.Forms
 
 
