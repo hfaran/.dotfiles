@@ -131,3 +131,15 @@ Function IAmAdmin () {
     # http://superuser.com/a/749259
     return [bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")
 }
+
+
+Function robokill ($deletePath) {
+    <#
+    Nuke given path (even if path is too long)
+    #>
+    rm C:\robokilltemp
+    mkdir C:\robokilltemp
+    robocopy C:\robokilltemp $deletePath /purge
+    rm C:\robokilltemp
+    rm $deletePath
+}
