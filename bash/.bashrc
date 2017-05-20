@@ -97,16 +97,28 @@ then
    eval "$(thefuck --alias fuck)"
 fi
 
-# linuxbrew
-_LINUXBREW_PATH="$HOME/.linuxbrew/bin"
-if [ -d $_LINUXBREW_PATH ]
+if [ $(uname) == "Linux" ]
 then
-    export PATH="$HOME/.linuxbrew/bin:$PATH"
-    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-
-    if [ -f "$_LINUXBREW_PATH/virtualenvwrapper.sh" ]
+    # linuxbrew
+    _LINUXBREW_PATH="$HOME/.linuxbrew/bin"
+    if [ -d $_LINUXBREW_PATH ]
     then
-        source "$_LINUXBREW_PATH/virtualenvwrapper.sh"
+        export PATH="$HOME/.linuxbrew/bin:$PATH"
+        export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+        export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+        if [ -f "$_LINUXBREW_PATH/virtualenvwrapper.sh" ]
+        then
+            source "$_LINUXBREW_PATH/virtualenvwrapper.sh"
+        fi
     fi
+
+    # Install z if it's not installed
+    if [ ! -f ~/z.sh ]
+    then
+        echo "Installing z since I didn't find it in your home directory..."
+        wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/z.sh
+    fi
+    # Source z
+    . ~/z.sh
 fi
