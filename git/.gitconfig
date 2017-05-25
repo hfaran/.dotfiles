@@ -19,6 +19,8 @@
 [help]
     autocorrect = 30
 [core]
-	excludesfile = /Users/hfaran/.gitignore_global
+    excludesfile = /Users/hfaran/.gitignore_global
 [push]
-	default = simple
+    default = simple
+[rerere]
+    enabled = true
