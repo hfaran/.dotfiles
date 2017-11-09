@@ -39,7 +39,7 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 # git
 Function gs {git status $args}
 Function gd {git diff $args}
-Function gu {git fetch; git pull; git up}
+Function gup {git fetch; git pull; git up}
 Function clean_this_git_up {git clean -ndfx -e .idea}
 Function clean_this_git_up_for_real {git clean -dfx -e .idea}
 
