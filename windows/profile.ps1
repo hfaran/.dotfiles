@@ -40,6 +40,8 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 Function gs {git status $args}
 Function gd {git diff $args}
 Function gup {git fetch; git pull; git up}
+Function gpo {git push origin HEAD}
+Function gpou {git push -u origin HEAD}
 Function clean_this_git_up {git clean -ndfx -e .idea}
 Function clean_this_git_up_for_real {git clean -dfx -e .idea}
 
