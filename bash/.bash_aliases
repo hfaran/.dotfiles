@@ -44,8 +44,13 @@ alias catp='pygmentize -g'
 if [[ "$UNAMESTR" == "Linux" ]]; then
     alias ls='ls --color=auto'
 elif [[ "$UNAMESTR" == "Darwin" ]]; then
-    if [[ -z $(brew list | grep coreutils) ]]; then
-        echo "Please run `brew install coreutils` to install a good ls"
+    BREWCOREUTILS_PRESENT_CACHE="/tmp/doihavebrewcoreutils"
+    if [[ ! -f $BREWCOREUTILS_PRESENT_CACHE ]]; then
+        if [[ -z $(brew list | grep coreutils) ]]; then
+            echo "Please run `brew install coreutils` to install a good ls"
+        else
+            brew list | grep coreutils > $BREWCOREUTILS_PRESENT_CACHE
+        fi
     else
         alias ls='ls --color=auto'
     fi

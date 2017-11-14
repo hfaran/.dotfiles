@@ -34,10 +34,12 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+echo -e "Defining bash_aliases... \c"
 if [ -f ~/.bash_aliases ]
 then
   .  ~/.bash_aliases
 fi
+echo "Done."
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
@@ -56,24 +58,30 @@ PS1="${_smiley}${_PS1}"
 # Requires `sudo apt-get install ncurses-term`
 export TERM=xterm-256color
 # Ruby version manager
+echo -e "rvm setup... \c"
 if [ -d ~/.rvm/ ]
 then
     export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
     source ~/.rvm/scripts/rvm
 fi
+echo "Done."
+
 # For pipsi
 export PATH=~/.local/bin:$PATH
 
 export EDITOR=vim
 
 # pip install virtualenvwrapper
+echo -e "virtualenvwrapper setup... \c"
 export WORKON_HOME=~/.virtualenv_Envs
 _VIRTUALENVWRAPPER_SH="/usr/local/bin/virtualenvwrapper.sh"
 if [ -f $_VIRTUALENVWRAPPER_SH ]
 then
     source $_VIRTUALENVWRAPPER_SH
 fi
+echo "Done."
 # tmuxinator
+echo -e "tmuxinator setup... \c"
 # Grab bash completion file if it doesn't exist
 _TMUX_COMPLETION_FILE="$HOME/.bin/tmuxinator.bash"
 if [ ! -f $_TMUX_COMPLETION_FILE ]
@@ -82,20 +90,25 @@ then
     wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash -P ${HOME}/.bin/
 fi
 source $_TMUX_COMPLETION_FILE
+echo -e "Done."
 
 # tmux-plugins
+echo -e "Install tmux-plugins if necessary... \c"
 if [ ! -d ~/.tmux/plugins/tpm ]
 then
     echo "Installing tmux-plugins..."
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+echo "Done."
 
 # pip/brew install thefuck
+echo -e "Defining tf aliases... \c"
 if [ $(which thefuck) ]
 then
    eval "$(thefuck --alias pls)"
    eval "$(thefuck --alias fuck)"
 fi
+echo "Done."
 
 if [ $(uname) == "Linux" ]
 then
