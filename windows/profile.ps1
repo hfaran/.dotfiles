@@ -7,8 +7,6 @@
 # Imports #
 ###########
 
-$env:PSModulePath = $env:PSModulePath # + ";E:\Documents\WindowsPowerShell\modules"
-
 Import-Module PSReadLine
 Import-Module z
 Add-Type -AssemblyName System.Windows.Forms
@@ -18,18 +16,8 @@ Add-Type -AssemblyName System.Windows.Forms
 # Configuration #
 ############################
 
-# Initialize pshazz (install using scoop)
-try { $null = gcm pshazz -ea stop; pshazz init } catch { }
-
 # Set "Menu" (bash style) completion with Tab key rather than Ctrl-Space; https://github.com/lzybkr/PSReadLine
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
-
-# # Persistent History setup; https://software.intel.com/en-us/blogs/2014/06/17/giving-powershell-a-persistent-history-of-commands
-# $HistoryFilePath = Join-Path ([Environment]::GetFolderPath('UserProfile')) .ps_history
-# Register-EngineEvent PowerShell.Exiting -Action { Get-History | Export-Clixml $HistoryFilePath } | out-null
-# If (Test-path $HistoryFilePath) { Import-Clixml $HistoryFilePath | Add-History }
-# Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
-# Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 
 ###########
