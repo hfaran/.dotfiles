@@ -27,6 +27,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function Complete
 # git
 Function gs {git status $args}
 Function gd {git diff $args}
+Function gdw {git diff -w $args}
 Function gup {git fetch; git pull; git up}
 Function gpo {git push origin HEAD}
 Function gpou {git push -u origin HEAD}
