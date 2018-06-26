@@ -11,6 +11,7 @@
     sync = !legit sync \"$@\"
     publish = !legit publish \"$@\"
     graft = !legit graft \"$@\"
+    up = pull --rebase --autostash
 [user]
     email = hamzafaran@outlook.com
     name = hfaran
