@@ -49,8 +49,7 @@ fixwifi () {
 cleanbrew () {
     set -x
     mkdir -p "/Users/$USER/Library/Caches/Homebrew/Casks"
-    brew cask cleanup
-    brew cleanup --force -s
+    brew cleanup -s
     rm -rf $(brew --cache)
     brew prune
     mkdir -p "/Users/$USER/Library/Caches/Homebrew/Casks"
