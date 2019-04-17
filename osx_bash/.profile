@@ -51,7 +51,6 @@ cleanbrew () {
     mkdir -p "/Users/$USER/Library/Caches/Homebrew/Casks"
     brew cleanup -s
     rm -rf $(brew --cache)
-    brew prune
     mkdir -p "/Users/$USER/Library/Caches/Homebrew/Casks"
     brew services cleanup
     set +x
