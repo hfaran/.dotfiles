@@ -10,6 +10,7 @@
 $env:PSModulePath = $env:PSModulePath + ";E:\Documents\WindowsPowerShell\modules"
 
 Import-Module PSReadLine
+# https://www.powershellgallery.com/packages/z
 Import-Module z
 Add-Type -AssemblyName System.Windows.Forms
 
@@ -46,8 +47,9 @@ Function gpou {git push -u origin HEAD}
 Function clean_this_git_up {git clean -ndfx -e .idea}
 Function clean_this_git_up_for_real {git clean -dfx -e .idea}
 
+# pipx install pygments
 Function catp {pygmentize -g $args}
-New-Item alias:subl -value "C:\Program Files\Sublime Text 3\sublime_text.exe"
+New-Item alias:subl -value "C:\Program Files\Sublime Text 3\sublime_text.exe" -ErrorAction SilentlyContinue
 Function service ($name, $action) {sudo net $action $name}
 
 # Navigational aliases

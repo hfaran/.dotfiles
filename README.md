@@ -11,7 +11,9 @@
 bash$ stow bash
 bash$ stow git
 ...
-PS> python stow.py windows
+PS> pip install click
+PS> scoop install ln
+PS> python stow.py windows -s
 ```
 
 ## References
